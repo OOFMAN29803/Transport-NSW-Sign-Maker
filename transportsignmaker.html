@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
+<title>Station Maker</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@600&display=swap');
 
@@ -14,7 +14,7 @@ margin-top: 190px;
 .signmain {
 border-radius: 6px;
 background-color: #008c94;
-width: 1200px;
+width: 1300px;
 height: 300px;
 margin-top: 200px;
 font-family: 'Public Sans', sans-serif;
@@ -77,27 +77,58 @@ height: 700px;
 border: 2px solid;
 margin-top: 20px;
 border-radius: 20px;
+font-family: 'Public Sans', sans-serif;
+margin-left: 20px;
+}
+.stationPIDtitle {
+margin-left: 30px;
+font-size: 40px;
+margin-top: 10px;
+}
+.NextService {
+width: 450px;
+height: 60px;
+border-radius: 17px;
+background-color: #f47913;
+margin-top: -30px;
 }
 
+.pnextservice {
+font-size: 30px;
+margin-left: 20px;
+color: white;
+}
 
+.minp {
+font-size: 40px;
+margin-left: 60px;
 </style>
 </head>
 <body> 
 <center><input placeholder="Max 20 Characters" maxlength=20 class="input" id="input" type="text" oninput="updateText()"></input></center>
-<center><div id="signmain" class="signmain"><p id="output" class="psign">Tallawong</p></div><center>
+<center><div id="signmain" class="signmain"><p id="output" class="psign">Tallawong</p></div></center>
+<center>
 <div onclick="metrochange()" class="metrochoose"></div>
 <div onclick="trainchange()" class="trainchoose"></div>
 <div onclick="lightrailchange()" class="lightrailchoose"></div>
 <div onclick="ferrychange()" class="ferrychoose"></div>
 <div onclick="buschange()" class="buschoose"></div>
-<div class="stationPID"></div>
+</center>
+<div class="stationPID"><div class="NextService" ><p id="nextservicep" class="pnextservice">Next Service</p></div><p class="stationPIDtitle">Central</p><p id="minp" class="minp">Placeholder Coming Soon</p></div>
 <script>
+
 function updateText() {
     var input = document.getElementById("input").value;
     var output = document.getElementById("output");
     output.textContent = input;
 document.title = input + " Station";
 }
+
+function time() {
+var nextservice = document.getElementById("nextservicep")
+nextservice.textContent = "Next Service: " + new Date().toLocaleTimeString();
+}
+setInterval(time, 1000)
 
 function metrochange() {
 var metrosign = document.getElementById("signmain")
