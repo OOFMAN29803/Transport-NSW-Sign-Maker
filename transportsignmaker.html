@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@600&display=swap');
+
+.psign {
+color: white;
+font-size: 130px;
+font-family: 'Public Sans', sans-serif;
+margin-top: 190px;
+}
+.signmain {
+border-radius: 6px;
+background-color: #008c94;
+width: 1200px;
+height: 300px;
+margin-top: 200px;
+font-family: 'Public Sans', sans-serif;
+color: white;
+font-size: 120px;
+word-wrap: break-word;
+display: flex;
+flex-direction: column-reverse;
+}
+
+.metrochoose {
+background-color: #008c94;
+width: 100px;
+margin-top: 15px;
+height: 100px;
+border-radius: 10px;
+}
+
+.trainchoose {
+background-color: #f47913;
+width: 100px;
+margin-top: 15px;
+height: 100px;
+border-radius: 10px;
+}
+
+.lightrailchoose {
+background-color: #ed2438;
+width: 100px;
+height: 100px;
+margin-top: 15px;
+border-radius: 10px;
+}
+
+.ferrychoose {
+background-color: #2e9c06;
+margin-top: 15px;
+width: 100px;
+height: 100px;
+border-radius: 10px;
+}
+
+.buschoose {
+background-color: #00a6e5;
+margin-top: 15px;
+width: 100px;
+height: 100px;
+border-radius: 10px;
+}
+
+.input {
+width: 300px;
+height: 40px;
+border-radius: 15px;
+border: 1px solid;
+}
+.stationPID {
+width: 450px;
+height: 700px;
+border: 2px solid;
+margin-top: 20px;
+border-radius: 20px;
+}
+
+
+</style>
+</head>
+<body> 
+<center><input placeholder="Max 20 Characters" maxlength=20 class="input" id="input" type="text" oninput="updateText()"></input></center>
+<center><div id="signmain" class="signmain"><p id="output" class="psign">Tallawong</p></div><center>
+<div onclick="metrochange()" class="metrochoose"></div>
+<div onclick="trainchange()" class="trainchoose"></div>
+<div onclick="lightrailchange()" class="lightrailchoose"></div>
+<div onclick="ferrychange()" class="ferrychoose"></div>
+<div onclick="buschange()" class="buschoose"></div>
+<div class="stationPID"></div>
+<script>
+function updateText() {
+    var input = document.getElementById("input").value;
+    var output = document.getElementById("output");
+    output.textContent = input;
+document.title = input + " Station";
+}
+
+function metrochange() {
+var metrosign = document.getElementById("signmain")
+metrosign.style.backgroundColor = "#008c94"
+}
+
+function trainchange() {
+var trainsign = document.getElementById("signmain")
+trainsign.style.backgroundColor = "#f47913"
+}
+
+function lightrailchange() {
+var lightrailsign = document.getElementById("signmain")
+lightrailsign.style.backgroundColor = "#ed2438"
+}
+
+function ferrychange() {
+var ferrysign = document.getElementById("signmain")
+ferrysign.style.backgroundColor = "#2e9c06"
+}
+
+function buschange() {
+var bussign = document.getElementById("signmain")
+bussign.style.backgroundColor = "#00a6e5"
+}
+</script>
+</body>
+</html>
